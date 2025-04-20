@@ -1,0 +1,104 @@
+
+/* 基本のスタイル */
+h1 {
+    font-size: 32px;
+    margin: 0px;
+    padding: 4px;
+    color: #222288;
+}
+
+hr {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+input[type="text"]{
+    padding: 0;
+    line-height: 28px;
+    height: 30px;
+    font-size: 100%;
+}
+input[type="password"]{
+    padding: 0;
+    line-height: 28px;
+    height: 30px;
+    font-size: 100%;
+}
+.btn{
+    border-radius : 5px;
+    font-size     : 13pt;
+    text-align    : center;
+    cursor        : pointer;
+    padding       : 1px 65px;
+    background    : #00BB00;
+    color         : #ffffff;
+    transition    : .3s;
+    box-shadow    : 4px 4px 3px #666666;
+    border        : 2px solid #00BB00;
+  	margin-top:20px;
+    margin-bottom:20px;
+
+    height:40px;
+  }
+  .btn:hover {
+    box-shadow    : none;
+    color         : #00BB00;
+    background    : #ffffff;
+  }
+  
+/* ページ固有のスタイル */
+/* ログインページ */
+th.login_field {
+    width: 150px;
+    text-align: left;
+    padding: 8px;
+    color: #ffffff;
+    background-color: #aaaaff;
+}
+
+td.login_field {
+    padding: 8px;
+}
+
+td.login_button {
+    text-align: center;
+    padding: 8px;
+}
+
+/* リストページ */
+table.toolbar {
+    margin-top: 16px;
+    margin-bottom: 32px;
+}
+
+table.list th {
+    width: 150px;
+    text-align: left;
+    padding: 8px;
+    color: #ffffff;
+    background-color: #5555aa;
+}
+
+table.list td {
+    background-color: #bbbbff;
+    padding: 8px;
+}
+
+/* 追加・編集・削除ページ */
+th.add_field {
+    width: 150px;
+    text-align: left;
+    padding: 8px;
+    color: #ffffff;
+    background-color: #aaaaff;
+}
+
+td.add_field {
+    padding: 8px;
+}
+
+td.add_button {
+    text-align: center;
+    padding: 8px;
+}
+
+

@@ -1,0 +1,218 @@
+@charset "UTF-8";
+/* cssは「-」でつなぐこととする(命名規則) */
+/* ページ全体の設定 */
+body {
+	background-color: aliceblue;
+	/* 背景をグラデーション */
+	background: linear-gradient(90deg, aliceblue, powderblue);
+}
+/* 入力系統はカーソルを指へ変更 */
+label,
+input[type="radio"],
+input[type="reset"],
+input[type="submit"],
+input[type="button"],
+button,
+summary {
+	cursor: pointer;
+}
+/* ログインステータス表示 */
+.status {
+	float: right;
+	text-align: right;
+}
+/* 検索窓表示 */
+.search {
+	float: left;
+}
+/* ラベルの共通設定インライン化する */
+label {
+	display: inline-block;
+	width: 8em;
+}
+/* 検索窓の設定 */
+#searchForm input[type="search"],
+#searchForm select {
+	width: 15em;
+	border: gray 1px solid;
+}
+#searchForm input[type="number"],
+#searchForm input[type="text"] {
+	width: 5em;
+	border: gray 1px solid;
+}
+
+#entryForm input[type="text"],
+#entryForm input[type="number"],
+#entryForm select{
+	box-sizing: border-box;
+	width: 15em;
+	border: gray 1px solid;
+}
+
+/* 未入力の場合ハイライト */
+input:invalid,
+select:invalid {
+  background-color: yellow;
+}
+
+summary{
+	width:max-content;
+}
+
+/* #リストタグにつく「・」を表示しない */
+ul, li {
+	list-style-type: none;
+}
+
+/* focus時の設定 */
+/* ボタン押下後もfocus残るのでこの色になる */
+input:focus {
+	background-color: powderblue;
+	opacity: 0.9;
+}
+
+/* textのreadonlyだけ色を変更 */
+input[type="text"]:read-only {
+	background-color: darkslategray;
+	color: aliceblue;
+}
+
+#resultForm{
+	clear:both;
+}
+
+table {
+	border: navy 2px solid;
+	border-collapse: collapse;
+	min-width: 1080px;
+    overflow-x: scroll;
+}
+
+
+/* 検索結果表の設定 */
+#resultForm table {
+	width: 100%;
+}
+
+/* table のcol幅を指定できるようにする指定できるようにする設定 */
+.resultTable {
+	table-layout: fixed;
+}
+
+/* table幅の設定 */
+col.check {
+	width: 1em;
+}
+col.card_id,
+col.image ,
+col.price {
+	width: 2em;
+}
+col.expansion_name {
+	width: 4em;
+}
+
+/* 交互に色変更 */
+tbody tr:nth-child(odd) td {
+	background-color: powderblue;
+}
+tbody tr:nth-child(even) td {
+	background-color: aliceblue;
+}
+
+/* 表に用いる罫線の色 */
+th,
+td {
+	padding: 5px 10px;
+	border: steelblue 1px solid;
+}
+
+/* 検索結果表のヘッダの色 */
+th {
+	width: 2em;
+	background-color: cornflowerblue;
+}
+
+/* 詳細表示(カラムの表示／非表示) */
+/* 参考 https://note.com/multireflection/n/n1bcf3ee6f36c */
+col.release_date,
+col.registration_time,
+col.update_time {
+	width: 0em;/* width指定して幅を再調整する */
+	visibility: collapse;
+}
+#detail:checked~table colgroup col.release_date,
+#detail:checked~table colgroup col.registration_time,
+#detail:checked~table colgroup col.update_time {
+	width: 5em;/* width指定して幅を再調整する */
+	visibility: visible;
+}
+
+/* マウスが乗っている行をハイライト */
+table tr:hover td {
+  background-color: #ffdaf8;
+}
+table th,
+table td {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* ボタンの設定 */
+/* btnsはdiv、btnはinputに割り当てたクラス */
+.btns {
+	margin: 1em;
+}
+
+/* ボタンの基本の見た目 */
+.btn {
+	width: 8em;
+	margin: 0 0.5em;
+	padding: 0.5em;
+	border: none;
+	border-radius: 0.5em;
+	background-color: cornflowerblue;
+	box-shadow: 0 1px 0 0 navy;
+}
+
+/* ボタンマウスオーバー中の状態 */
+.btn:hover {
+	opacity: 0.7;
+	background-color: deepskyblue;
+}
+
+/* クリックしている間の状態 文字色と背景色 */
+.btn:active {
+	color: #fff;
+	background-color: deepskyblue;
+
+	/*影をけす*/
+	box-shadow: none;
+	/*ボタンを下に移動させる(見た目で押されたことを表現)*/
+	position: relative;
+	top: 1px;
+}
+
+/* クリアボタンの色 */
+.btn-clear {
+	background-color: lightgray;
+}
+
+/* 検索登録更新buttonの色 */
+.btn-search,
+.btn-register,
+.btn-update {
+	background-color: cornflowerblue;
+}
+
+/* focus時の設定 */
+/* ボタン押下後もfocus残るのでこの色になる */
+input:focus {
+	background-color: silver;
+}
+/* エラーメッセージ表示 */
+.error_message {
+	color: red;
+}
