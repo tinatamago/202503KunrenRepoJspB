@@ -11,6 +11,10 @@
 - JSPとServletによるWeb画面表示
 - MVCアーキテクチャに基づく構成
 
+## 🎥 デモ動画（YouTube）
+
+実際の動作を以下の動画でご覧いただけます（※YouTube限定公開）※近日公開
+
 ## 🛠 使用技術
 
 - Java（Servlet）
@@ -37,7 +41,9 @@
 │   ├── jsp/               # JSPファイル
 │   ├── css/               # CSSファイル
 │   └── WEB-INF/           # web.xmlなど設定ファイル
-⋮       └── lib/           # 外部JARライブラリ（例：JDBCドライバ）※Git管理外推奨
+│       └── lib/           # 外部JARライブラリ（例：JDBCドライバ）※Git管理外推奨
+├── sql/            # sqlファイル
+⋮
 ```
 ## 🔧 セットアップ手順（開発環境）
 
@@ -48,7 +54,7 @@
 
 ※ `lib/` フォルダ内のJARは `.gitignore` により除外されています。手動で追加してください。
 
-## 🛠 セットアップ手順（PostgreSQL）
+## 🗄️ セットアップ手順（PostgreSQL）
 
 1. PostgreSQL に以下の設定で接続してください：
 
@@ -57,7 +63,7 @@
    - ユーザー名：`postgres`
    - パスワード：`postgres`
 
-2. データベースにテーブルを作成する必要があります。以下の4テーブルが必要です：
+2. データベースにテーブルを作成する必要があります。以下の4テーブルが必要です。
 
    - `m_user`
    - `ptcg_cards`
@@ -65,14 +71,22 @@
    - `ptcg_expansions`
 
 3. `sql/create_tables.sql` に必要なテーブル作成用SQL文をまとめています。  
-   → PostgreSQLでこのSQLを実行してください。
-
----
+   → PostgreSQLで以下のSQLを実行してください。
+   
+   [sql/create_tables.sql](./sql/create_tables.sql)
 
 ## 📂 SQLファイルについて
 
 テーブル定義は `sql/create_tables.sql` に記載しています。  
 データベースを構築する際にご利用ください。
+
+### 🔁 テーブルの削除
+
+不要になったテーブルを削除するには、以下のSQLを実行してください。
+
+[sql/drop_tables.sql](./sql/drop_tables.sql)
+
+---
 
 ## ⚠️ 注意事項
 
