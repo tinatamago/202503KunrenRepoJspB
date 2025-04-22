@@ -21,8 +21,6 @@
 - JSP
 - PostgreSQL
 - JDBC
-- Eclipse
-- Apache Tomcat
 
 ## 📁 構成
 
@@ -42,6 +40,8 @@
 │   ├── css/               # CSSファイル
 │   └── WEB-INF/           # web.xmlなど設定ファイル
 │       └── lib/           # 外部JARライブラリ（例：JDBCドライバ）※Git管理外推奨
+│   └── upload/
+│       └── ptcg/          # 画像の保存場所
 ├── sql/            # sqlファイル
 ⋮
 ```
@@ -63,28 +63,20 @@
    - ユーザー名：`postgres`
    - パスワード：`postgres`
 
-2. データベースにテーブルを作成する必要があります。以下の4テーブルが必要です。
+2. 以下の4つのテーブルを作成する必要があります：
 
-   - `m_user`
-   - `ptcg_cards`
-   - `ptcg_categories`
-   - `ptcg_expansions`
+- `m_user`
+- `ptcg_cards`
+- `ptcg_categories`
+- `ptcg_expansions`
 
-3. `sql/create_tables.sql` に必要なテーブル作成用SQL文をまとめています。  
-   → PostgreSQLで以下のSQLを実行してください。
-   
-   [sql/create_tables.sql](./sql/create_tables.sql)
+3. 作成用SQLは以下にまとめています：
 
-## 📂 SQLファイルについて
+👉 [sql/create_tables.sql](./sql/create_tables.sql)
 
-テーブル定義は `sql/create_tables.sql` に記載しています。  
-データベースを構築する際にご利用ください。
+4. 不要になったテーブルを削除する場合はこちら：
 
-### 🔁 テーブルの削除
-
-不要になったテーブルを削除するには、以下のSQLを実行してください。
-
-[sql/drop_tables.sql](./sql/drop_tables.sql)
+👉 [sql/drop_tables.sql](./sql/drop_tables.sql)
 
 ---
 
@@ -92,7 +84,7 @@
 
 本リポジトリには、訓練校で用意されたテンプレートや教材ソースコードが一部含まれています。  
 その上で、下記の機能については自身で設計・実装を行いました。
-※各 ptcg/配下にあるファイル群が自身で作成したものとなります。
+※各 ptcgという名称のディレクトリ配下にあるファイル群が自身で作成したものとなります。
 
 - サーブレットによる処理の実装（例：データ登録・検索など）
 - JSPの画面設計と連携（JSP、HTML、CSS、画像を含む）
