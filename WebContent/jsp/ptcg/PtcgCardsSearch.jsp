@@ -113,8 +113,8 @@
 						<td>${card.cardName}</td>
 						<td>${card.categoryName}</td>
 						<td><img src="${pageContext.request.contextPath}/upload/ptcg/${card.imageFileName}"
-						 width="50" height="50" alt="${card.cardName}" 
-						 onerror="this.onerror=null;this.src='${pageContext.request.contextPath}/img/no_image.jpeg';"></td>
+						 width="auto" height="50" alt="${card.cardName}" 
+						 onerror="this.onerror=null;this.src='${pageContext.request.contextPath}/img/no_image.png';"></td>
 						<td>${card.expansionName}</td>
 						<td>${card.releaseDate}</td>
 						<td>${card.registrationTime}</td>
