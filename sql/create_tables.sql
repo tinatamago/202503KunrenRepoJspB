@@ -52,7 +52,6 @@ INSERT INTO public.m_user (user_id, user_pass, user_name) VALUES
   , (2,22,'ゲスト2')
   , (3,333,'ゲスト3');
 
-
 -- ptcg_categories
 INSERT INTO public.ptcg_categories (category_id, category_name) VALUES
     (0,'ポケモン')
