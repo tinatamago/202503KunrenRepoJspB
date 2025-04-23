@@ -82,6 +82,7 @@ INSERT INTO public.ptcg_expansions (expansion_code, expansion_name, release_date
   , ('sv7','ステラミラクル',DATE '2024-07-19')
   , ('sv7a','楽園ドラゴーナ',DATE '2024-09-17')
   , ('sv8','超電ブレイカー',DATE '2024-10-18')
+  , ('sv8','テラスタルフェスex',DATE '2024-12-06')
   , ('sv9','バトルパートナーズ',DATE '2025-01-24')
   , ('svABC','テストABC',DATE '2025-02-20')
   , ('sv9a','熱風のアリーナ',DATE '2025-03-14')
