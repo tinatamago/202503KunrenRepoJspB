@@ -10,7 +10,12 @@
 - 登録・更新・削除・検索といった基本的なCRUD操作
 - JSPとServletによるWeb画面表示
 - 画像のアップロード
-- 検索結果のCSV出力
+- カードリストのCSV出力
+
+## 🎥 デモ動画（YouTube）
+
+実際の動作を以下の動画でご覧いただけます（※YouTube限定公開）  
+[https://youtu.be/k8XrFXnjaGU](https://youtu.be/k8XrFXnjaGU)
 
 ## ⚠️ 注意事項
 
@@ -32,17 +37,14 @@
 - [WebContent/jsp/ptcg](./WebContent/jsp/ptcg)
 - [WebContent/upload/ptcg](./WebContent/upload/ptcg)
 
-本リポジトリ内で使用している一部の画像は、ポケモンカード公式サイト（https://www.pokemon-card.com/）を参考にしています。
+本リポジトリ内で使用している一部の画像は、ポケモンカードゲーム公式ホームページ「トレーナーズウェブサイト」を参考にしています。  
+https://www.pokemon-card.com/
 
 これらの画像は**非営利**に限って使用しています。  
 画像の著作権は、株式会社ポケモン、および関連各社にすべて帰属します。  
 万が一、権利者様からの申し出があった場合には、速やかに画像の差し替え・削除等の対応を行います。
 
 --
-
-## 🎥 デモ動画（YouTube）
-
-実際の動作を以下の動画でご覧いただけます（※YouTube限定公開）※近日公開
 
 ## 🛠 使用技術
 
