@@ -40,7 +40,7 @@ public class InsertCard extends HttpServlet {
 	 * @param  request  HttpServletRequestオブジェクト
 	 * @param  response HttpServletResponseオブジェクト
 	 * @throws Exception 
-	 * TODO エラーハンドリングが全くできてないのでしたい 
+	 * TODO エラーハンドリングをする
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -62,13 +62,13 @@ public class InsertCard extends HttpServlet {
 		//String filename=part.getSubmittedFileName();//ie対応が不要な場合
 		String filename = Paths.get(part.getSubmittedFileName()).getFileName().toString();
 		//アップロードするフォルダ
-		//String path = getServletContext().getRealPath("/upload/ptcg");
+		String path = getServletContext().getRealPath("/upload/ptcg");
 		//絶対パスで指定
-		String path = "C:\\java_2022\\pleiades\\workspace\\202503KunrenRepoJspB\\WebContent\\upload\\ptcg\\";
+		//String path = "C:\\java_2022\\pleiades\\workspace\\202503KunrenRepoJspB\\WebContent\\upload\\ptcg\\";
 
 		//書き込み
 		//part.write(path + File.separator + filename);//画像設定しなかった場合にIOException
-		//例外で処理するのか、ifで切り分けるか　どちらが正しいのかわからない TODO 実装の再検討
+		//例外で処理するのか、ifで切り分けるか TODO 実装の再検討
 		if (!filename.isEmpty()) {
 			part.write(path + File.separator + filename);
 		}
@@ -96,11 +96,11 @@ public class InsertCard extends HttpServlet {
 				//追加件数をメッセージとしてリクエストスコープに渡す
 				request.setAttribute("message", count + "件のデータを追加しました");
 
-				//ポケカ検索画面 にページ遷移 TODO 連続で追加できるようにする場合は、登録画面に遷移するように仕様変更が必要
-				RequestDispatcher dispatcher = request.getRequestDispatcher("DspPtcgCardsSearch");
-				dispatcher.forward(request, response);
 			}
-
+			//ポケカ検索画面 にページ遷移 TODO 連続で追加できるようにする場合は、登録画面に遷移するように仕様変更が必要
+			RequestDispatcher dispatcher = request.getRequestDispatcher("DspPtcgCardsInsert");
+			dispatcher.forward(request, response);
+			
 		} catch (SQLException e) {
 			//想定外のエラーが発生したとき 
 			e.printStackTrace();

@@ -40,7 +40,7 @@ public class UpdateCard extends HttpServlet {
 	 * @param  request  HttpServletRequestオブジェクト
 	 * @param  response HttpServletResponseオブジェクト
 	 * @throws Exception 
-	 * TODO エラーハンドリングが全くできてないのでしたい 
+	 * TODO エラーハンドリングをする
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -62,17 +62,17 @@ public class UpdateCard extends HttpServlet {
 		//String filename=part.getSubmittedFileName();//ie対応が不要な場合
 		String filename = Paths.get(part.getSubmittedFileName()).getFileName().toString();
 		//System.out.println("filename : " + filename);
-		
+
 		//アップロードするフォルダ
-		//String path = getServletContext().getRealPath("/upload/ptcg");
+		String path = getServletContext().getRealPath("/upload/ptcg");
 		//絶対パスで指定
-		String path = "C:\\java_2022\\pleiades\\workspace\\202503KunrenRepoJspB\\WebContent\\upload\\ptcg\\";
+		//String path = "C:\\java_2022\\pleiades\\workspace\\202503KunrenRepoJspB\\WebContent\\upload\\ptcg\\";
 		//実際にファイルが保存されるパス確認
 		//System.out.println(path);
 
 		//書き込み
 		//part.write(path + File.separator + filename);//画像設定しなかった場合にIOException
-		//例外で処理するのか、ifで切り分けるか　どちらが正しいのかわからない TODO 実装の再検討
+		//例外で処理するのか、ifで切り分けるか TODO 実装の再検討
 		if (!filename.isEmpty()) {
 			part.write(path + File.separator + filename);
 		}
@@ -99,10 +99,11 @@ public class UpdateCard extends HttpServlet {
 
 				//追加件数をメッセージとしてリクエストスコープに渡す
 				request.setAttribute("message", count + "件のデータを更新しました");
-				//ポケカ検索画面 にページ遷移
-				RequestDispatcher dispatcher = request.getRequestDispatcher("DspPtcgCardsSearch");
-				dispatcher.forward(request, response);
+
 			}
+			//ポケカ検索画面 にページ遷移
+			RequestDispatcher dispatcher = request.getRequestDispatcher("DspPtcgCardsSearch");
+			dispatcher.forward(request, response);
 
 		} catch (Exception e) {
 			//想定外のエラーが発生したとき 
@@ -113,6 +114,6 @@ public class UpdateCard extends HttpServlet {
 			ServletContext context = this.getServletContext();
 			RequestDispatcher dispatcher = context.getRequestDispatcher(Constant.SYSTEM_ERR);
 			dispatcher.forward(request, response);
-		} 
+		}
 	}
 }
